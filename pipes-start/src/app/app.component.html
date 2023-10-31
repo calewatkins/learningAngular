@@ -10,11 +10,11 @@
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let server of servers | filter:filteredStatus:'status'"
+          *ngFor="let server of servers | filter:filteredStatus:'status' | filterName:'name'"
           [ngClass]="getStatusClasses(server)">
           <span
             class="badge">
-            {{ server.status }}
+            {{ server.status  | reverse }}
           </span>
           <strong>
             {{ server.name | shorten:15 }}</strong> | 
